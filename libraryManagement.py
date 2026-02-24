@@ -1,10 +1,10 @@
 import datetime as dt
 
 students = [
-    {"id": 1, "name": "Amit", "age": 20, "allotedBooks": []},
-    {"id": 2, "name": "Neha", "age": 21, "allotedBooks": []},
-    {"id": 3, "name": "Rahul", "age": 19, "allotedBooks": []},
-    {"id": 4, "name": "Priya", "age": 20, "allotedBooks": []}
+    {"id": 1, "name": "Amit", "age": 20, "allotedBooks": [],"banned":False,"bannedDate":None},
+    {"id": 2, "name": "Neha", "age": 21, "allotedBooks": [],"banned":False,"bannedDate":None},
+    {"id": 3, "name": "Rahul", "age": 19, "allotedBooks": [],"banned":False,"bannedDate":None},
+    {"id": 4, "name": "Priya", "age": 20, "allotedBooks": [],"banned":False,"bannedDate":None}
 ]
 books = [
     { "id": 1,
@@ -73,7 +73,19 @@ def allotBook():
   
     student_not_found=0 
     student_id=int(input("enter student id"))
+    
     for student in students:
+        if student['banned']==True:
+            dt_tdy=dt.date.today()
+            banned_date=student['bannedDate']
+            days=(dt_tdy-banned_date).days 
+            if days>15 and student['bannedDate']!=None:
+                student['banned']=False
+                student['bannedDate']=None
+                print("you can now allot book")
+            else:
+                print("out of luck you are still banned for ",15-days," days")
+                return
         if student_id==student.get("id"):
             for book in books:
                 if book.get('available'):
@@ -85,6 +97,7 @@ def allotBook():
                     if book['available']==True:
                        book['available']=False
                        student.get('allotedBooks').append({"book_id":book_id,"allotedDate":dt.date.today()})
+                       print("book alloted successfully")
                     else:
                         print(f"book already alloted to {student.get('name')}")
         else:
@@ -97,16 +110,26 @@ def allotBook():
 def returnBook():
     student_not_found=0 
     book_found={}
+    fine=0
     student_id=int(input("enter student id"))
     book_id=int(input("enter book id"))
     for student in students:
         if student['id']==student_id:
             for allotedBook in student['allotedBooks']:
+                alloted_date=allotedBook['allotedDate']
+                dt_today=dt.date.today()
+                days=(dt_today-alloted_date).days
+                if days>7:
+                 student['banned']=True
+                 student['bannedDate']=dt_today
+                 print("you are banned for 15 days")   
                 if allotedBook['book_id']==book_id:
                     for book in books:
                         if book['id']==book_id:
                             book['available']=True
+                            
                             student['allotedBooks'].remove(allotedBook)
+                            print("book returned successfully")
                             
                     
                 
