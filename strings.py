@@ -19,3 +19,4 @@ print(a.startswith("h"))
 print(a.endswith("o"))
 print(a.isalpha())
 print(a.isdigit())
+
