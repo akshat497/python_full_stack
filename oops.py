@@ -141,21 +141,152 @@ count=0
 # print(count)
 
 
-def akshatsSplit(data):
-    var=""
-    length=len(data)
-    arr={}
-    for i in range(length):
-     if i==length-1:
-        var=var+data[i]
-        arr[var]=len(var)
-     if data[i]!=" " :
-        var=var+data[i]
+# def akshatsSplit(data):
+#     var=""
+#     length=len(data)
+#     arr={}
+#     for i in range(length):
+#      if i==length-1:
+#         var=var+data[i]
+#         arr[var]=len(var)
+#      if data[i]!=" " :
+#         var=var+data[i]
         
-     else:
-        arr[var]=len(var)
-        var=""
-    return arr
+#      else:
+#         arr[var]=len(var)
+#         var=""
+#     return arr
 
                
-print(akshatsSplit("hello world this is a test"))
+# print(akshatsSplit("hello world this is a test"))
+
+
+# string="naman"
+# string_1=""
+
+# for i in string:
+#       string_1=i+string_1
+      
+# if string==string_1:
+#     print("palindrome")
+# else:    print("not palindrome")
+
+
+
+# array=["akshat", "prateek", "naman", "prateek", "naman", "naman"]
+
+# unique=[]
+
+# for i in array:
+#    if i not in unique:
+#       unique.append(i)     
+# print(unique)
+
+
+# list=[22,1,12,2,66]
+# max=list[0]
+# second_max=list[0]
+
+
+# for i in list:
+#    if i >max:
+#       second_max=max
+#       max=i
+      
+# print("max:", max)
+# print("second max:", second_max)      
+#     
+# list=[22,1,12,2,66]
+
+
+
+# for i in range(len(list)):
+#       for j in range(i+1, len(list)):
+#          if list[i]>list[j]:
+#             temp=list[i]
+#             list[i]=list[j]
+#             list[j]=temp
+# print(list)
+
+array=[0,2,0,23,0,44]
+
+
+for i in range(len(array)):
+   if array[i]==0:
+      for j in range(i+1, len(array)):
+         if array[j]!=0:
+            temp=array[i]
+            array[i]=array[j]
+            array[j]=temp
+            break
+print(array)
+ 
+ #inheritance 
+ 
+ # when a child inherit property from its parents or grandparents 
+ 
+ 
+ #single inheritance
+ #multiple inheritance
+ #multilevel inheritance
+ 
+ 
+ #single inheritance
+class animal:  
+   def speak(self):
+      print("animal is making sound")
+ 
+ 
+class dog(animal):
+   def bark(self):
+      print("dog is barking")     
+
+#multiple inheritance
+
+class father():
+   def height(self):
+      print("6ft")
+      
+class mother():
+   def color(self):
+      print("fair")
+      
+class grandMother():
+   def hairs(self):
+      print("long")
+      
+class child(grandMother,father):
+   def color(self):
+      print("dark")
+   pass      
+      
+      
+#multilevel inheritance
+class one():
+   def first(self):
+      print("i am first class")
+      
+class two(one):
+   def second(self):
+      print("i am second class")
+class three(two):
+   def third(self):
+      print("i am third class")
+class four(three):
+   def fourth(self):
+      print("i am fourth class")
+class five(four):
+   def fifth(self):
+      print("i am fifth class")
+a=five()
+
+a.first()
+a.second()
+a.third()
+a.fourth()
+
+
+
+       
+   
+    
