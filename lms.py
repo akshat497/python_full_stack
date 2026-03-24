@@ -88,14 +88,46 @@ def searchStudent():
             print(student)
     
     
-def deleteStudent():
-    students=getStudents()
-    id=int(input("enter the student id u want to delete"))  
-    for student in students:
-        if student['id']==id:
-            students.remove(id)
+def delete(type):
+    id=int(input(f"enter the {type} id u want to delete")) 
+    if type =="students":
+        data=getStudents()
+    elif type =="Courses":
+        data=getCourse()
      
-       
+    for i in data:
+        if i['id']==id:
+            data.remove(i)
+            print(f"{type} deleted successfully")
+            
+    write=open(f"{type}.json","w")
+    json.dump(data,write,indent=2)  
+ 
+def writeStudent(name,data):
+        write=open(f"{name}.json","w")
+        json.dump(data,write,indent=2) 
+    
+def update():
+    print("press 1 to update name")
+    print("press 2 to update age")
+    id=int(input("enter the id of the student you want to update"))
+    choice=int(input("enter the choice"))
+    data=getStudents()
+    def updateData(type,updatedValue):
+        for i in data:
+             if i['id']==id:
+                i[f'{type}']=updatedValue
+    
+    if choice==1:
+        newName=input("enter the new name")
+        updateData("name",newName)
+        writeStudent("students",data)        
+    elif choice ==2:
+         newAge=int(input("enter the new name"))
+         updateData("age",newAge)
+         writeStudent("students",data)  
+    else:
+        print("wrong choice")         
 while True:
     print("press 1 to add student")
     print("press 2 to add course")
@@ -106,6 +138,7 @@ while True:
     print("press 7 search  student")
     print("press 8 to delete student")
     print("press 9 to delete course")
+    print("press 10 to update student")
     
     
     number=int(input("enter the number"))
@@ -113,9 +146,21 @@ while True:
         addStudent()
     if number == 2:
         addCourse()
+    if number==3:
+        students=getStudents()
+        for student in students:
+           print(student)
     if number==5:
         enroll("enroll")
     if number==6:
         enroll("unEnroll")
     if number==7:
         searchStudent()
+    if number==8:
+        delete("students")
+    if number==9:
+        delete("Courses")
+    if number == 10:
+        update()
+        
+        

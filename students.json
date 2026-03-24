@@ -2,7 +2,13 @@
   {
     "id": 1,
     "name": "akshat",
-    "age": 25,
+    "age": 26,
+    "courses": []
+  },
+  {
+    "id": 2,
+    "name": "vishal",
+    "age": 21,
     "courses": []
   }
 ]
