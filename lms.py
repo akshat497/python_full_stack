@@ -123,11 +123,12 @@ def update():
         updateData("name",newName)
         writeStudent("students",data)        
     elif choice ==2:
-         newAge=int(input("enter the new name"))
+         newAge=int(input("enter the new age"))
          updateData("age",newAge)
          writeStudent("students",data)  
     else:
-        print("wrong choice")         
+        print("wrong choice")  
+               
 while True:
     print("press 1 to add student")
     print("press 2 to add course")

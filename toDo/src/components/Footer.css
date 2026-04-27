@@ -1,0 +1,23 @@
+footer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: gray;
+    padding: 2%;
+    gap: 50px;
+}
+
+#footerFirst,#FooterSecond{
+    display: flex;
+   
+    align-items: start;
+    background-color: gray;
+    padding: 2%;
+    gap: 50px;
+}
+
+#First,#Second,#Third,#Fourth{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

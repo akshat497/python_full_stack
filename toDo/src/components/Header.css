@@ -1,0 +1,16 @@
+.Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightcyan;
+    padding: 2%;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.HeaderButtonHolder,.HeaderAuthHolder{
+    display: flex;
+    gap: 30px;
+    cursor: pointer;
+}
+
