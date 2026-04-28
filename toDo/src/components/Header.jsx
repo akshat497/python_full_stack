@@ -7,9 +7,9 @@ export default function Header() {
     <h3>Logo</h3>
 
     <div className='HeaderButtonHolder'>
-        <div>About Us</div>
-        <div>Contact Us</div>
-        <div>Home</div>
+         <Link to='/' style={{textDecoration:"none",color:"black"}}><div>About Us</div></Link> 
+         <Link to='/contact' style={{textDecoration:"none",color:"black"}}><div>Contact Us</div></Link>
+     
     </div>
 
     <div className='HeaderAuthHolder'>
