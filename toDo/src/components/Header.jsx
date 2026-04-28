@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Header.css'
 export default function Header() {
   return (
@@ -12,8 +13,8 @@ export default function Header() {
     </div>
 
     <div className='HeaderAuthHolder'>
-        <div>Login</div>
-        <div>Singnup</div>
+       <Link to='/Login' style={{textDecoration:"none",color:"black"}}> <div style={{textDecoration:"none"}}>Login</div></Link>
+        <Link to='/Signup' style={{textDecoration:"none",color:"black"}}><div style={{textDecoration:"none"}}>Signup</div></Link>
     </div>
 
     </div>
