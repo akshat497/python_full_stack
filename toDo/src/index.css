@@ -78,3 +78,72 @@ h1{
   
   
 }
+
+/* AboutUs.css */
+
+.aboutus {
+  padding: 60px 20px;
+  background: #f8f9fa;
+}
+
+.aboutus-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.aboutus-title {
+  font-size: 42px;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.aboutus-subtitle {
+  font-size: 18px;
+  color: #666;
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.aboutus-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.aboutus-card {
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.aboutus-card:hover {
+  transform: translateY(-8px);
+}
+
+.aboutus-card h2 {
+  font-size: 24px;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.aboutus-card p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .aboutus-title {
+    font-size: 32px;
+  }
+
+  .aboutus-subtitle {
+    font-size: 16px;
+  }
+}
